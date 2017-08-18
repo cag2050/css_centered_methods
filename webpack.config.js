@@ -36,17 +36,17 @@ var config = {
         loaders: [
             {
                 test: /\.css$/,
-                loader: ExtractTextPlugin.extract("style", "css")
+                loader: ExtractTextPlugin.extract("style-loader", "css-loader")
             },
             {
                 test: /\.scss$/,
-                loader: ExtractTextPlugin.extract('style', 'css!sass')
+                loader: ExtractTextPlugin.extract('style-loader', 'css-loader!sass-loader')
             },
-            {test: /\.(png|jpg)$/, loader: 'url'},
+            {test: /\.(png|jpg)$/, loader: 'url-loader'},
             {
                 test: /\.js$/,
                 exclude: "/node_modules/",
-                loader: 'babel',
+                loader: 'babel-loader',
                 query: {
                     presets: ['es2015']
                 }
